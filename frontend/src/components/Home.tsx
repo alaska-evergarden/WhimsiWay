@@ -1,11 +1,29 @@
 import React from "react";
+import Navbar from "./Navbar";
+import Heatmap from "./Heatmap";
 
 const Home = () => {
   return (
-    <div className="flex flex-col h-lvh justify-center items-center lora-font">
-      <span style={{ fontSize: 96, marginBottom: 16 }}>WhimsiWay</span>
-      <span style={{ fontSize: 32 }}>Your Roadside Companion</span>
-    </div>
+    <>
+      <Navbar />
+      <div className="h-lvh lora-font">
+        <img className="bg-img" src="road.png" alt="" />
+        <div className="flex flex-col px-16 py-10">
+          <span className="mb-8" style={{ fontSize: "3.5em" }}>
+            Steering Clear <br /> of Trouble
+          </span>
+          <span className="mb-8" style={{ fontSize: "1.5em" }}>
+            Plan and navigate your routes with ease.
+          </span>
+          <button className="nav-button">
+            <p style={{ fontSize: "1em", fontWeight: "bold" }}>
+              FIND YOUR NEXT JOURNEY
+            </p>
+          </button>
+        </div>
+      </div>
+      <Heatmap />
+    </>
   );
 };
 

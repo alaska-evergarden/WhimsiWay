@@ -2,9 +2,9 @@ import "../App.css";
 
 const Heatmap = () => {
   return (
-    <div className="flex justify-center align-middle">
+    <div className="flex h-lvh justify-center items-center">
       <iframe
-        style={{ width: "50%", height: 400 }}
+        style={{ width: "80%", height: 600 }}
         src={"heatmap.html"}
       ></iframe>
     </div>
