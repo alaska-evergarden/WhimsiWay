@@ -19,7 +19,7 @@ summary_stats = df.describe()
 # Information about the dataset, including the datatype of each column
 df_info = df.info()
 
-print(df_head, summary_stats, df_info)
+# print(df_head, summary_stats, df_info)
 
 # Dropping columns with excessive missing values or those not relevant for our initial models
 columns_to_drop = ['End_Lat', 'End_Lng', 'Wind_Chill(F)', 'Precipitation(in)', 'Unnamed: 0', 'ID', 'Source', 'Description', 'Street', 'Zipcode', 'Country', 'Weather_Timestamp', 'Airport_Code']
@@ -42,7 +42,7 @@ for col in cat_cols:
 df_cleaned_info = df_cleaned.info()
 df_cleaned_head = df_cleaned.head()
 
-print(df_cleaned_info, df_cleaned_head)
+# print(df_cleaned_info, df_cleaned_head)
 
 X = df_cleaned.drop('Severity', axis=1)
 y = df_cleaned['Severity']
@@ -63,7 +63,7 @@ y_pred = rf_clf.predict(X_test)
 
 # Evaluating the model
 accuracy = accuracy_score(y_test, y_pred)
-print(accuracy)
+# print(accuracy)
 
 # Calculating precision, recall, and F1-score
 precision = precision_score(y_test, y_pred, average='macro')
@@ -73,4 +73,7 @@ f1 = f1_score(y_test, y_pred, average='macro')
 # Generating the confusion matrix
 conf_matrix = confusion_matrix(y_test, y_pred)
 
-print(precision, recall, f1, conf_matrix)
+print(f"Accuracy: {accuracy}")
+print(f"Precision: {precision}")
+print(f"Recall: {recall}")
+print(f"F1-Score: {f1}")
