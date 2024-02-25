@@ -34,9 +34,6 @@ const Navbar = () => {
           <Link to="/routefinder">Route Finder</Link>
         </li>
         <li>
-          <Link to="/routefinder">Severity Models</Link>
-        </li>
-        <li>
           <Link to="/about">About</Link>
         </li>
       </ul>
