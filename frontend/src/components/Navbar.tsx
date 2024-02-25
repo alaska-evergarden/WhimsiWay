@@ -5,17 +5,23 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="flex flex-col justify-center items-center top-nav lora-font"
-        style={{ height: "105px", zIndex: 100, backgroundColor: "#F4EEE5" }}
+        className="flex w-lvw justify-center items-center"
+        style={{ backgroundColor: "#F4EEE5" }}
       >
-        <span
-          style={{ fontSize: 32, fontWeight: "bold", letterSpacing: "0.1em" }}
+        <img src="/favicon.svg" alt="" />
+        <div
+          className="flex flex-col mx-5 justify-center items-center top-nav lora-font"
+          style={{ height: "105px", zIndex: 100 }}
         >
-          WhimsiWay
-        </span>
-        <span style={{ fontSize: 12, letterSpacing: "0.2em" }}>
-          Your Roadside Companion
-        </span>
+          <span
+            style={{ fontSize: 32, fontWeight: "bold", letterSpacing: "0.1em" }}
+          >
+            WhimsiWay
+          </span>
+          <span style={{ fontSize: 12, letterSpacing: "0.2em" }}>
+            Your Roadside Companion
+          </span>
+        </div>
       </div>
       <ul className="flex justify-around items-center navbar lora-font">
         <li>
@@ -26,6 +32,9 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/routefinder">Route Finder</Link>
+        </li>
+        <li>
+          <Link to="/routefinder">Severity Models</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
