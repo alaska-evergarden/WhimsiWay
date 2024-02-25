@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Heatmap from "./Heatmap";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
           </span>
           <button className="nav-button">
             <p style={{ fontSize: "1em", fontWeight: "bold" }}>
-              FIND YOUR NEXT JOURNEY
+              <Link to="/routefinder">FIND YOUR NEXT JOURNEY</Link>
             </p>
           </button>
         </div>

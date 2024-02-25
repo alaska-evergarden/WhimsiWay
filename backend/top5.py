@@ -42,7 +42,9 @@ def get_top_5(city):
     # After aggregating accidents by cluster label and identifying top clusters
     top_5_clusters = cluster_counts.head(5).index.tolist()
 
-    if len(top_5_clusters) < 5:
+    if len(df_filtered) < 5:
+        top_5_centroids = df_filtered
+    elif len(top_5_clusters) < 5:
         # Not enough clusters, use K-Means to ensure 5 centroids
         kmeans = KMeans(n_clusters=5, random_state=0).fit(df_filtered[['Start_Lat', 'Start_Lng']].values)
         # Extract centroids
