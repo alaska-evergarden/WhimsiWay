@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
 
@@ -12,11 +12,14 @@ const Hotspots = () => {
 
   const submit = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:5000/endpoint", {
-        params: {
-          city: city,
-        },
-      });
+      const res = await axios.get(
+        "https://us-central1-ashs-wrld.cloudfunctions.net/collections_api/endpoint",
+        {
+          params: {
+            city: city,
+          },
+        }
+      );
       console.log(res.data);
       setReload(true);
     } catch (error) {

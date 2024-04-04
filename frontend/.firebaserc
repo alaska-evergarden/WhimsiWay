@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "ashs-wrld"
+  },
+  "targets": {
+    "ashs-wrld": {
+      "hosting": {
+        "curious-collections": [
+          "curious-collections"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
