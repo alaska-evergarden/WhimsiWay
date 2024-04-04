@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "./Navbar";
 import Heatmap from "./Heatmap";
 import { Link } from "react-router-dom";
