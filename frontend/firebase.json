@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "curious-collections",
+    "site": "whimsiway",
     "source": ".",
     "ignore": [
       "firebase.json",

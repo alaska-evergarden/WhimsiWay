@@ -1,4 +1,4 @@
-#!/Users/ashley/Documents/React/WhimsiWay/backend/functions/venv/bin/python3.12
+#!/Users/ashley/Documents/React/WhimsiWay/backend/functions/venv/bin/python
 # -*- coding: utf-8 -*-
 # Copyright 2024 Google LLC
 #

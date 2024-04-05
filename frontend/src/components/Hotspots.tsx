@@ -5,6 +5,7 @@ import axios from "axios";
 const Hotspots = () => {
   const [city, setCity] = useState("");
   const [reload, setReload] = useState(false);
+  const [mapHtml, setMapHtml] = useState("");
 
   const handleKeyDown = (event: any) => {
     if (event.key === "Enter") submit();
@@ -13,14 +14,14 @@ const Hotspots = () => {
   const submit = async () => {
     try {
       const res = await axios.get(
-        "https://us-central1-ashs-wrld.cloudfunctions.net/collections_api/endpoint",
+        "https://us-central1-ashs-wrld.cloudfunctions.net/whimsi_api",
         {
           params: {
             city: city,
           },
         }
       );
-      console.log(res.data);
+      setMapHtml(res.data);
       setReload(true);
     } catch (error) {
       console.log(error);
@@ -53,16 +54,29 @@ const Hotspots = () => {
             <img src="search-interface-symbol.png" alt="" />
           </button>
         </div>
-        <iframe
-          key={reload.toString()}
-          style={{
-            width: "100%",
-            height: 600,
-            position: "absolute",
-            zIndex: -1,
-          }}
-          src={"top_5_hotspots_map.html"}
-        ></iframe>
+        {mapHtml == "" ? (
+          <iframe
+            key={reload.toString()}
+            style={{
+              width: "100%",
+              height: 600,
+              position: "absolute",
+              zIndex: -1,
+            }}
+            src="/top_5_hotspots_map.html"
+          ></iframe>
+        ) : (
+          <div
+            key={reload.toString()}
+            style={{
+              width: "100%",
+              height: 600,
+              position: "absolute",
+              zIndex: -1,
+            }}
+            dangerouslySetInnerHTML={{ __html: mapHtml }}
+          ></div>
+        )}
       </div>
     </>
   );
