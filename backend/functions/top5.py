@@ -1,3 +1,4 @@
+from flask import render_template_string
 from geopy.geocoders import Nominatim
 import pandas as pd
 import numpy as np
@@ -76,5 +77,7 @@ def get_top_5(city):
             icon=folium.Icon(color='red', icon='info-sign')
         ).add_to(new_map)
 
-    # Display or save the map
-    new_map.save("../../frontend/public/top_5_hotspots_map.html")
+    map_html = new_map._repr_html_()
+
+    # Return the HTML as a response
+    return render_template_string(map_html)
